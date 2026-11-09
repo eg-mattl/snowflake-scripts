@@ -31,8 +31,9 @@ Set the account and user for the Snowflake Python Connector. The default authent
 export SNOWFLAKE_ACCOUNT="your-account-identifier"
 export SNOWFLAKE_USER="your-user"
 export SNOWFLAKE_AUTHENTICATOR="externalbrowser"
-# Optional, if required by your environment:
+# Optional role override; it must be authorized to read ACCOUNT_USAGE.USERS.
 export SNOWFLAKE_ROLE="your-read-only-role"
+# Supply a warehouse when the user has no default warehouse; SELECT needs one.
 export SNOWFLAKE_WAREHOUSE="your-warehouse"
 
 python export_user_default_roles.py --output ./reports/snowflake_user_default_roles.xlsx
